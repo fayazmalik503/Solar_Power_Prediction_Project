@@ -1,0 +1,17 @@
+import joblib
+import numpy as np
+
+# Model ka path
+model_load_path = r"C:\Users\Fayaz Ahmed Malik\OneDrive\Desktop\Solar_Power_Prediction_Project\models\linear_regression_model.pkl"
+
+# Model load karo
+loaded_model = joblib.load(model_load_path)
+print("Model loaded successfully!")
+
+# Prediction ke liye new data (features ka order same rakhna training jaisa)
+new_data = np.array([[30, 65, 10, 40, 5]])  # Example features
+
+# Predict karo
+predicted_power = loaded_model.predict(new_data)
+
+print(f"Predicted Power Output: {predicted_power[0]:.2f}")
